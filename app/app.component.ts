@@ -7,10 +7,10 @@ import { Keg } from './keg.model';
   <div class="container">
     <h1>Tap Room</h1>
     <div class="row">
-      <div class="col-sm-6">
+      <div class="col s6">
         <keg-list [kegs]="kegsMaster" (kegClick)="kegClick($event)"></keg-list>
       </div>
-      <div class="col-sm-6">
+      <div class="col s6">
         <keg-details [focusKeg]="masterFocus" (editClick)="editKeg($event)"></keg-details>
         <edit-keg [selectedKeg]="masterEdit" (doneClick)="editDone()"></edit-keg>
       </div>
@@ -47,7 +47,7 @@ export class AppComponent {
     if (this.masterFocus === clickedKeg) {
       this.masterFocus = null;
     } else {
-      this.masterFocus = clickedKeg;      
+      this.masterFocus = clickedKeg;
     }
   }
 

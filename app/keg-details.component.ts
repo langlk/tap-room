@@ -7,7 +7,7 @@ import { Keg } from './keg.model';
     <div *ngIf=focusKeg>
       <h2>
         {{focusKeg.name}}
-        <button type="button" class="btn" (click)="edit()">Edit</button>
+        <a (click)="edit()" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">mode_edit</i></a>
       </h2>
       <h3>{{focusKeg.brand}}</h3>
       <p>

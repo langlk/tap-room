@@ -9,15 +9,16 @@ import { Keg } from './keg.model';
       <option value="allKegs">All Kegs</option>
       <option value="lowKegs">Low Kegs</option>
     </select>
-    <ul>
-      <li *ngFor="let keg of kegs | volume:volumeFilter">
+    <ul class="collection">
+      <li *ngFor="let keg of kegs | volume:volumeFilter" class="collection-item">
         <span (click)="focus(keg)" class="clickable">
           {{keg.brand}} - {{keg.name}},
           <span [class]="alcoholContent(keg)">{{keg.abv}}%</span>
           -
           <span [class]="priceColor(keg)">{{"$" + keg.price}}</span>
         </span>
-        <button type="button" class="btn" (click)="sellPint(keg)">Sell Pint</button>
+        <a href=
+        "#" (click)="sellPint(keg)" class="secondary-content"><i class="material-icons">local_drink</i></a>
       </li>
     <ul>
   `
