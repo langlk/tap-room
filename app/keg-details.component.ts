@@ -30,7 +30,7 @@ export class KegDetailsComponent {
   @Input() focusKeg: Keg;
   @Output() editClick = new EventEmitter();
 
-  editKeg() {
+  edit() {
     this.editClick.emit(this.focusKeg);
   }
 }
