@@ -5,8 +5,12 @@ import { Keg } from './keg.model';
   selector: 'keg-list',
   template: `
     <h2>Kegs</h2>
+    <select (change)="listType($event.target.value)">
+      <option value="allKegs">All Kegs</option>
+      <option value="lowKegs">Low Kegs</option>
+    </select>
     <ul>
-      <li *ngFor="let keg of kegs">
+      <li *ngFor="let keg of kegs | volume:volumeFilter">
         <span (click)="focus(keg)">
           {{keg.brand}} - {{keg.name}}, {{keg.abv}}% - {{"$" + keg.price}}
         </span>
@@ -19,6 +23,7 @@ import { Keg } from './keg.model';
 export class KegListComponent {
   @Input() kegs: Keg[];
   @Output() kegClick = new EventEmitter();
+  volumeFilter: string = "allKegs";
 
   focus(keg: Keg) {
     this.kegClick.emit({"event": "focus", "keg": keg});
@@ -26,5 +31,9 @@ export class KegListComponent {
 
   sellPint(keg: Keg) {
     this.kegClick.emit({"event": "sellPint", "keg": keg});
+  }
+
+  listType(type) {
+    this.volumeFilter = type;
   }
 }

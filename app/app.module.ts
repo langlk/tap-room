@@ -8,6 +8,8 @@ import { NewKegComponent } from './new-keg.component';
 import { EditKegComponent } from './edit-keg.component';
 import { KegDetailsComponent } from './keg-details.component';
 
+import { VolumePipe } from './volume.pipe';
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -18,7 +20,8 @@ import { KegDetailsComponent } from './keg-details.component';
     KegListComponent,
     NewKegComponent,
     EditKegComponent,
-    KegDetailsComponent
+    KegDetailsComponent,
+    VolumePipe
   ],
   bootstrap: [ AppComponent ]
 })
