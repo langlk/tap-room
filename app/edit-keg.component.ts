@@ -4,7 +4,7 @@ import { Keg } from './keg.model';
 @Component({
   selector: 'edit-keg',
   template: `
-    <div *ngIf="selectedKeg" class="card">
+    <div *ngIf="selectedKeg" class="card edit-keg">
       <div class="card-image">
         <img src="http://nordictravelmag.com/wp-content/uploads/2017/06/01.jpg">
         <span class="card-title">Edit: {{selectedKeg.name}}</span>

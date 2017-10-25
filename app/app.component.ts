@@ -8,14 +8,13 @@ import { Keg } from './keg.model';
     <h1>Tap Room</h1>
     <div class="divider"></div>
     <div class="row">
-      <div class="col m12 l6">
-        <keg-list [kegs]="kegsMaster" (kegClick)="kegClick($event)"></keg-list>
-      <new-keg (kegCreator)="addKeg($event)"></new-keg>
-
-      </div>
-      <div class="col m12 l6">
+      <div class="col m12 l6 push-l6">
         <keg-details [focusKeg]="masterFocus" (editClick)="editKeg($event)"></keg-details>
         <edit-keg [selectedKeg]="masterEdit" (doneClick)="editDone()"></edit-keg>
+      </div>
+      <div class="col m12 l6 pull-l6">
+        <keg-list [kegs]="kegsMaster" (kegClick)="kegClick($event)"></keg-list>
+        <new-keg (kegCreator)="addKeg($event)"></new-keg>
       </div>
     </div>
   </div>
