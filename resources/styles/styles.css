@@ -1,3 +1,8 @@
+.clickable:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 .price-high {
   color: #e0c451;
 }

@@ -11,7 +11,7 @@ import { Keg } from './keg.model';
     </select>
     <ul>
       <li *ngFor="let keg of kegs | volume:volumeFilter">
-        <span (click)="focus(keg)">
+        <span (click)="focus(keg)" class="clickable">
           {{keg.brand}} - {{keg.name}},
           <span [class]="alcoholContent(keg)">{{keg.abv}}%</span>
           -
