@@ -22,7 +22,7 @@ import { Keg } from './keg.model';
           <span [class]="priceColor(keg)">{{"$" + keg.price}}</span>
         </span>
         <a href=
-        "#" (click)="sellPint(keg)" class="secondary-content"><i class="material-icons">local_drink</i></a>
+        "#" (click)="sellPint(keg)" class="secondary-content waves-effect waves-teal"><i class="material-icons">local_drink</i></a>
       </li>
     <ul>
     <script>
