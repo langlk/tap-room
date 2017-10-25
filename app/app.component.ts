@@ -6,10 +6,16 @@ import { Keg } from './keg.model';
   template: `
   <div class="container">
     <h1>Tap Room</h1>
+    <div class="row">
+      <div class="col-sm-6">
+        <keg-list [kegs]="kegsMaster" (kegClick)="kegClick($event)"></keg-list>
+      </div>
+      <div class="col-sm-6">
+        <keg-details [focusKeg]="masterFocus" (editClick)="editKeg($event)"></keg-details>
+        <edit-keg [selectedKeg]="masterEdit" (doneClick)="editDone()"></edit-keg>
+      </div>
+    </div>
     <new-keg (kegCreator)="addKeg($event)"></new-keg>
-    <keg-list [kegs]="kegsMaster" (kegClick)="kegClick($event)"></keg-list>
-    <keg-details [focusKeg]="masterFocus" (editClick)="editKeg($event)"></keg-details>
-    <edit-keg [selectedKeg]="masterEdit" (doneClick)="editDone()"></edit-keg>
   </div>
   `
 })
@@ -43,9 +49,11 @@ export class AppComponent {
 
   editKeg(clickedKeg: Keg) {
     this.masterEdit = clickedKeg;
+    this.masterFocus = null;
   }
 
   editDone() {
+    this.masterFocus = this.masterEdit;
     this.masterEdit = null;
   }
 
