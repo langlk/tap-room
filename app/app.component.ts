@@ -7,7 +7,7 @@ import { Keg } from './keg.model';
   <div class="container">
     <h1>Tap Room</h1>
     <new-keg (kegCreator)="addKeg($event)"></new-keg>
-    <keg-list [kegs]="kegsMaster" (focusClick)="focusKeg($event)"></keg-list>
+    <keg-list [kegs]="kegsMaster" (kegClick)="kegClick($event)"></keg-list>
     <keg-details [focusKeg]="masterFocus" (editClick)="editKeg($event)"></keg-details>
     <edit-keg [selectedKeg]="masterEdit" (doneClick)="editDone()"></edit-keg>
   </div>
@@ -29,6 +29,14 @@ export class AppComponent {
     this.kegsMaster.push(newKeg);
   }
 
+  kegClick(clickInfo) {
+    if (clickInfo["event"] === "focus") {
+      this.focusKeg(clickInfo["keg"]);
+    } else if (clickInfo["event"] === "sellPint") {
+      this.sellPint(clickInfo["keg"]);
+    }
+  }
+
   focusKeg(clickedKeg: Keg) {
     this.masterFocus = clickedKeg;
   }
@@ -39,5 +47,9 @@ export class AppComponent {
 
   editDone() {
     this.masterEdit = null;
+  }
+
+  sellPint(keg: Keg) {
+    keg.sell(1);
   }
 }
