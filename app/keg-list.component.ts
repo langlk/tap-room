@@ -6,9 +6,9 @@ import { Keg } from './keg.model';
   template: `
     <h2>Kegs</h2>
     <ul>
-      <li *ngFor="let keg of kegs">
+      <li *ngFor="let keg of kegs"
+        (click)="focus(keg)">
         {{keg.brand}} - {{keg.name}}, {{keg.abv}}% - {{"$" + keg.price}}
-        <button type="button" class="btn" (click)="editKeg(keg)">Edit</button>
       </li>
     <ul>
   `
@@ -16,9 +16,9 @@ import { Keg } from './keg.model';
 
 export class KegListComponent {
   @Input() kegs: Keg[];
-  @Output() editClick = new EventEmitter();
+  @Output() focusClick = new EventEmitter();
 
-  editKeg(keg: Keg) {
-    this.editClick.emit(keg);
+  focus(keg: Keg) {
+    this.focusClick.emit(keg);
   }
 }
