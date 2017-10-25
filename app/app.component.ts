@@ -9,13 +9,14 @@ import { Keg } from './keg.model';
     <div class="row">
       <div class="col m12 l6">
         <keg-list [kegs]="kegsMaster" (kegClick)="kegClick($event)"></keg-list>
+      <new-keg (kegCreator)="addKeg($event)"></new-keg>
+
       </div>
       <div class="col m12 l6">
         <keg-details [focusKeg]="masterFocus" (editClick)="editKeg($event)"></keg-details>
         <edit-keg [selectedKeg]="masterEdit" (doneClick)="editDone()"></edit-keg>
       </div>
     </div>
-    <new-keg (kegCreator)="addKeg($event)"></new-keg>
   </div>
   `
 })

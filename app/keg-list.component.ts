@@ -4,27 +4,32 @@ import { Keg } from './keg.model';
 @Component({
   selector: 'keg-list',
   template: `
-    <h2>Kegs</h2>
-    <div class="switch">
-      <label>
-        All Kegs
-        <input type="checkbox" (click)=toggleList()>
-        <span class="lever"></span>
-        Low Kegs Only
-      </label>
+    <div class="z-depth-1">
+      <div class="keg-list-header">
+        <h2>Kegs</h2>
+        <div class="switch">
+          <label>
+            All Kegs
+            <input type="checkbox" (click)=toggleList()>
+            <span class="lever"></span>
+            Low Kegs Only
+          </label>
+        </div>
+      </div>
+
+      <ul class="collection">
+        <li *ngFor="let keg of kegs | volume:volumeFilter" class="collection-item">
+          <span (click)="focus(keg)" class="clickable">
+            {{keg.brand}} - {{keg.name}},
+            <span [class]="alcoholContent(keg)">{{keg.abv}}%</span>
+            -
+            <span [class]="priceColor(keg)">{{"$" + keg.price}}</span>
+          </span>
+          <a href=
+          "#" (click)="sellPint(keg)" class="secondary-content waves-effect waves-orange"><i class="material-icons amber-text">local_drink</i></a>
+        </li>
+      </ul>
     </div>
-    <ul class="collection">
-      <li *ngFor="let keg of kegs | volume:volumeFilter" class="collection-item">
-        <span (click)="focus(keg)" class="clickable">
-          {{keg.brand}} - {{keg.name}},
-          <span [class]="alcoholContent(keg)">{{keg.abv}}%</span>
-          -
-          <span [class]="priceColor(keg)">{{"$" + keg.price}}</span>
-        </span>
-        <a href=
-        "#" (click)="sellPint(keg)" class="secondary-content waves-effect waves-teal"><i class="material-icons">local_drink</i></a>
-      </li>
-    <ul>
   `
 })
 

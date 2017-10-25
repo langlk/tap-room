@@ -1,3 +1,7 @@
+.keg-list-header {
+  padding: 1em;
+}
+
 .clickable:hover {
   text-decoration: underline;
   cursor: pointer;
@@ -30,7 +34,7 @@
     background-color: #5e8594 !important;
 }
 
-#edit-keg input:focus {
+#edit-keg input:focus, #new-keg input:focus {
   border-bottom: 1px solid #ffb502;
   -webkit-box-shadow: 0 1px 0 0 #ffb502;
   -moz-box-shadow: 0 1px 0 0 #ffb502;
@@ -39,4 +43,8 @@
 
 #keg-details strong {
   font-weight: bold;
+}
+
+.add-keg {
+  padding: 1em;
 }
