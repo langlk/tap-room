@@ -7,10 +7,10 @@ import { Keg } from './keg.model';
   <div class="container">
     <h1>Tap Room</h1>
     <div class="row">
-      <div class="col s6">
+      <div class="col m12 l6">
         <keg-list [kegs]="kegsMaster" (kegClick)="kegClick($event)"></keg-list>
       </div>
-      <div class="col s6">
+      <div class="col m12 l6">
         <keg-details [focusKeg]="masterFocus" (editClick)="editKeg($event)"></keg-details>
         <edit-keg [selectedKeg]="masterEdit" (doneClick)="editDone()"></edit-keg>
       </div>

@@ -4,7 +4,7 @@ import { Keg } from './keg.model';
 @Component({
   selector: 'keg-details',
   template: `
-    <div *ngIf=focusKeg class="card">
+    <div *ngIf=focusKeg class="card keg-details">
       <div class="card-image">
         <img src="http://nordictravelmag.com/wp-content/uploads/2017/06/01.jpg">
         <span class="card-title">{{focusKeg.name}}</span>

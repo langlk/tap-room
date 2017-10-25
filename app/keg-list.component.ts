@@ -25,12 +25,6 @@ import { Keg } from './keg.model';
         "#" (click)="sellPint(keg)" class="secondary-content waves-effect waves-teal"><i class="material-icons">local_drink</i></a>
       </li>
     <ul>
-    <script>
-      $(document).ready(function() {
-        $('select').material_select();
-        alert("derp");
-      });
-    </script>
   `
 })
 
