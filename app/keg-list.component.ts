@@ -12,7 +12,10 @@ import { Keg } from './keg.model';
     <ul>
       <li *ngFor="let keg of kegs | volume:volumeFilter">
         <span (click)="focus(keg)">
-          {{keg.brand}} - {{keg.name}}, {{keg.abv}}% - <span [class]="priceColor(keg)">{{"$" + keg.price}}</span>
+          {{keg.brand}} - {{keg.name}},
+          <span [class]="alcoholContent(keg)">{{keg.abv}}%</span>
+          -
+          <span [class]="priceColor(keg)">{{"$" + keg.price}}</span>
         </span>
         <button type="button" class="btn" (click)="sellPint(keg)">Sell Pint</button>
       </li>
@@ -42,6 +45,16 @@ export class KegListComponent {
       return "price-high";
     } else {
       return "price-low";
+    }
+  }
+
+  alcoholContent(keg) {
+    if (keg.abv > 8) {
+      return "abv-high";
+    } else if (keg.abv > 4) {
+      return "abv-med";
+    } else {
+      return "abv-low";
     }
   }
 }

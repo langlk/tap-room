@@ -5,3 +5,15 @@
 .price-low {
   color: #afafaf;
 }
+
+.abv-high {
+  color: #b52727;
+}
+
+.abv-med {
+  color: #3333a2;
+}
+
+.abv-low {
+  color: green;
+}
