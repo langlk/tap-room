@@ -1,6 +1,7 @@
 body {
   color: #2c3c42;
   background-color: #44565d;
+  font-family: 'Roboto Slab', serif;
 }
 
 h1 {
@@ -9,6 +10,7 @@ h1 {
 
 h2 {
   margin-top: 2px;
+  font-size: 30px;
 }
 
 .divider {
