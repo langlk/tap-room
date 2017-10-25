@@ -4,27 +4,34 @@ import { Keg } from './keg.model';
 @Component({
   selector: 'edit-keg',
   template: `
-    <div *ngIf="selectedKeg">
-      <h2>Edit Keg: {{selectedKeg.name}}</h2>
-      <form>
-        <div class="form-group">
-          <label>Name:</label>
-          <input [(ngModel)]="selectedKeg.name" name="keg-name">
-        </div>
-        <div class="form-group">
-          <label>Brand:</label>
-          <input [(ngModel)]="selectedKeg.brand" name="keg-brand">
-        </div>
-        <div class="form-group">
-          <label>Price/Pint:</label>
-          <input [(ngModel)]="selectedKeg.price" name="keg-price">
-        </div>
-        <div class="form-group">
-          <label>ABV:</label>
-          <input [(ngModel)]="selectedKeg.abv" name="keg-abv">
-        </div>
-        <button type="button" (click)="editDone()" class="btn">Done Editing</button>
-      </form>
+    <div *ngIf="selectedKeg" class="card">
+      <div class="card-image">
+        <img src="http://nordictravelmag.com/wp-content/uploads/2017/06/01.jpg">
+        <span class="card-title">Edit: {{selectedKeg.name}}</span>
+      </div>
+      <div class="card-content">
+        <form id="edit-keg">
+          <div>
+            <label>Name:</label>
+            <input id="input1" [(ngModel)]="selectedKeg.name" name="keg-name">
+          </div>
+          <div>
+            <label>Brand:</label>
+            <input [(ngModel)]="selectedKeg.brand" name="keg-brand">
+          </div>
+          <div class="row">
+            <div class="col s6">
+              <label>Price/Pint:</label>
+              <input [(ngModel)]="selectedKeg.price" name="keg-price">
+            </div>
+            <div class="col s6">
+              <label>ABV:</label>
+              <input [(ngModel)]="selectedKeg.abv" name="keg-abv">
+            </div>
+          </div>
+          <button type="button" (click)="editDone()" class="btn amber darken-3">Done Editing</button>
+        </form>
+      </div>
     </div>
   `
 })

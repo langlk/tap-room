@@ -22,3 +22,10 @@
 .abv-low {
   color: green;
 }
+
+#edit-keg input:focus {
+  border-bottom: 1px solid #ffb502;
+  -webkit-box-shadow: 0 1px 0 0 #ffb502;
+  -moz-box-shadow: 0 1px 0 0 #ffb502;
+  box-shadow: 0 1px 0 0 #ffb502;
+}
