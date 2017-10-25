@@ -1,0 +1,17 @@
+{
+  "name": "tap-room",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Kelsey Langlois <kels.langlois@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
