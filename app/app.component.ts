@@ -8,7 +8,7 @@ import { Keg } from './keg.model';
     <h1>Tap Room</h1>
     <new-keg (kegCreator)="addKeg($event)"></new-keg>
     <keg-list [kegs]="kegsMaster" (editClick)="editKeg($event)"></keg-list>
-    <edit-keg [selectedKeg]="masterSelected"></edit-keg>
+    <edit-keg [selectedKeg]="masterSelected" (doneClick)="editDone()"></edit-keg>
   </div>
   `
 })
@@ -29,5 +29,9 @@ export class AppComponent {
 
   editKeg(clickedKeg: Keg) {
     this.masterSelected = clickedKeg;
+  }
+
+  editDone() {
+    this.masterSelected = null;
   }
 }

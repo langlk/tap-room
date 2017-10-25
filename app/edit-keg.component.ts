@@ -23,6 +23,7 @@ import { Keg } from './keg.model';
           <label>ABV:</label>
           <input [(ngModel)]="selectedKeg.abv" name="keg-abv">
         </div>
+        <button type="button" (click)="editDone()" class="btn">Done Editing</button>
       </form>
     </div>
   `
@@ -30,4 +31,9 @@ import { Keg } from './keg.model';
 
 export class EditKegComponent {
   @Input() selectedKeg: Keg;
+  @Output() doneClick = new EventEmitter();
+
+  editDone() {
+    this.doneClick.emit();
+  }
 }
