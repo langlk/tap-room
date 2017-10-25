@@ -44,7 +44,11 @@ export class AppComponent {
   }
 
   focusKeg(clickedKeg: Keg) {
-    this.masterFocus = clickedKeg;
+    if (this.masterFocus === clickedKeg) {
+      this.masterFocus = null;
+    } else {
+      this.masterFocus = clickedKeg;      
+    }
   }
 
   editKeg(clickedKeg: Keg) {
