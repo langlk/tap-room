@@ -3,6 +3,13 @@
   cursor: pointer;
 }
 
+.switch label input[type=checkbox]:checked+.lever:after {
+    background-color: #5e8594 !important;
+}
+.switch label input[type=checkbox]:checked+.lever {
+    background-color: #5e8594 !important;
+}
+
 .price-high {
   color: #e0c451;
 }
