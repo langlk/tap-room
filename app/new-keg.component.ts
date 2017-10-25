@@ -4,7 +4,7 @@ import { Keg } from './keg.model';
 @Component({
   selector: 'new-keg',
   template: `
-    <div class="z-depth-1 add-keg">
+    <div class="z-depth-1 new-keg">
       <h2>Add a Keg</h2>
       <form id="new-keg">
         <div>

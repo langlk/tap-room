@@ -1,3 +1,33 @@
+body {
+  color: #2c3c42;
+  background-color: #44565d;
+}
+
+h1 {
+  color: #fff;
+}
+
+h2 {
+  margin-top: 2px;
+}
+
+.divider {
+  margin-bottom: 2em;
+}
+
+.keg-list, .new-keg {
+  background-color: #fff;
+}
+
+.keg-list {
+  padding-bottom: .5em;
+  margin-bottom: 1em;
+}
+
+.collection {
+  margin-bottom: 0px;
+}
+
 .keg-list-header {
   padding: 1em;
 }
@@ -30,6 +60,7 @@
 .switch label input[type=checkbox]:checked+.lever:after {
     background-color: #5e8594 !important;
 }
+
 .switch label input[type=checkbox]:checked+.lever {
     background-color: #5e8594 !important;
 }
@@ -41,10 +72,14 @@
   box-shadow: 0 1px 0 0 #ffb502;
 }
 
+#keg-details {
+  margin-top: 0px;
+}
+
 #keg-details strong {
   font-weight: bold;
 }
 
-.add-keg {
+.new-keg {
   padding: 1em;
 }

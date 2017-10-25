@@ -6,6 +6,7 @@ import { Keg } from './keg.model';
   template: `
   <div class="container">
     <h1>Tap Room</h1>
+    <div class="divider"></div>
     <div class="row">
       <div class="col m12 l6">
         <keg-list [kegs]="kegsMaster" (kegClick)="kegClick($event)"></keg-list>
