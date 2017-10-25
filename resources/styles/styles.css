@@ -3,13 +3,6 @@
   cursor: pointer;
 }
 
-.switch label input[type=checkbox]:checked+.lever:after {
-    background-color: #5e8594 !important;
-}
-.switch label input[type=checkbox]:checked+.lever {
-    background-color: #5e8594 !important;
-}
-
 .price-high {
   color: #e0c451;
 }
@@ -30,9 +23,20 @@
   color: green;
 }
 
+.switch label input[type=checkbox]:checked+.lever:after {
+    background-color: #5e8594 !important;
+}
+.switch label input[type=checkbox]:checked+.lever {
+    background-color: #5e8594 !important;
+}
+
 #edit-keg input:focus {
   border-bottom: 1px solid #ffb502;
   -webkit-box-shadow: 0 1px 0 0 #ffb502;
   -moz-box-shadow: 0 1px 0 0 #ffb502;
   box-shadow: 0 1px 0 0 #ffb502;
+}
+
+#keg-details strong {
+  font-weight: bold;
 }
