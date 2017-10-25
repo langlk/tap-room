@@ -6,7 +6,7 @@ import { Keg } from './keg.model';
   template: `
     <div *ngIf=focusKeg class="card" id="keg-details">
       <div class="card-image">
-        <img src="http://nordictravelmag.com/wp-content/uploads/2017/06/01.jpg">
+        <img src="resources/images/beer.jpg" alt="Close-up of beer">
         <span class="card-title">{{focusKeg.brand}} - {{focusKeg.name}}</span>
         <a (click)="edit()" class="btn-floating waves-effect halfway-fab waves-light orange darken-4 right"><i class="material-icons">mode_edit</i></a>
       </div>
