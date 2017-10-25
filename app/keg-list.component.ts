@@ -14,11 +14,5 @@ import { Keg } from './keg.model';
 })
 
 export class KegListComponent {
-  kegs: Keg[] = [
-    new Keg('Hop Czar', 'Bridgeport', 6, 7),
-    new Keg('Dark Marc', 'M.T. Head', 5, 8),
-    new Keg('Dawn of the Red', 'Nikasi', 5, 6),
-    new Keg('Rainier', 'Rainier', 2, 3),
-    new Keg('Voodoo Ranger', 'New Belgium', 6, 9)
-  ]
+  @Input() kegs: Keg[];
 }
