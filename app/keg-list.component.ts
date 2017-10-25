@@ -5,10 +5,14 @@ import { Keg } from './keg.model';
   selector: 'keg-list',
   template: `
     <h2>Kegs</h2>
-    <select (change)="listType($event.target.value)">
-      <option value="allKegs">All Kegs</option>
-      <option value="lowKegs">Low Kegs</option>
-    </select>
+    <div class="switch">
+      <label>
+        All Kegs
+        <input type="checkbox" (click)=toggleList()>
+        <span class="lever"></span>
+        Low Kegs Only
+      </label>
+    </div>
     <ul class="collection">
       <li *ngFor="let keg of kegs | volume:volumeFilter" class="collection-item">
         <span (click)="focus(keg)" class="clickable">
@@ -21,6 +25,12 @@ import { Keg } from './keg.model';
         "#" (click)="sellPint(keg)" class="secondary-content"><i class="material-icons">local_drink</i></a>
       </li>
     <ul>
+    <script>
+      $(document).ready(function() {
+        $('select').material_select();
+        alert("derp");
+      });
+    </script>
   `
 })
 
@@ -35,6 +45,14 @@ export class KegListComponent {
 
   sellPint(keg: Keg) {
     this.kegClick.emit({"event": "sellPint", "keg": keg});
+  }
+
+  toggleList() {
+    if (this.volumeFilter === "allKegs") {
+      this.volumeFilter = "lowKegs";
+    } else {
+      this.volumeFilter = "allKegs";
+    }
   }
 
   listType(type) {
