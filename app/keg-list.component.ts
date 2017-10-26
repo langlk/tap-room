@@ -16,25 +16,40 @@ import { Keg } from './keg.model';
           </label>
         </div>
       </div>
-
-      <ul class="collection">
-        <li *ngFor="let keg of kegs | volume:volumeFilter" class="collection-item">
-          <span (click)="focus(keg)" class="clickable">
-            {{keg.brand}} - {{keg.name}},
-            <span [class]="alcoholContent(keg)">{{keg.abv}}%</span>
-            -
-            <span [class]="priceColor(keg)">{{"$" + keg.price}}</span>
-          </span>
-          <span class="secondary-content">
-            <a href="#" (click)="sellPint(keg)" class="waves-effect waves-orange">
-              <i class="material-icons amber-text">local_drink</i>
-            </a>
-            <a href="#" (click)="sellGrowler(keg)" class="waves-effect waves-orange">
-              <i class="material-icons amber-text">local_gas_station</i>
-            </a>
-          </span>
-        </li>
-      </ul>
+      <table class="highlight">
+        <thead>
+          <tr>
+            <th class="first-col">Brewery</th>
+            <th>Name</th>
+            <th>ABV</th>
+            <th>Price</th>
+            <th class="icon-col">Pint</th>
+            <th class="icon-col">Growler</th>
+          <tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let keg of kegs | volume:volumeFilter">
+            <td (click)="focus(keg)" class="clickable first-col">{{keg.brand}}</td>
+            <td (click)="focus(keg)" class="clickable">{{keg.name}}</td>
+            <td class="clickable" (click)="focus(keg)">
+              <span [class]="alcoholContent(keg)">{{keg.abv}}%</span>
+            </td>
+            <td class="clickable"(click)="focus(keg)">
+              <span [class]="priceColor(keg)">{{"$" + keg.price}}</span>
+            </td>
+            <td class="icon-col">
+              <a href="#" (click)="sellPint(keg)" class="waves-effect waves-orange">
+                <i class="material-icons amber-text">local_drink</i>
+              </a>
+            </td>
+            <td class="icon-col">
+              <a href="#" (click)="sellGrowler(keg)" class="waves-effect waves-orange">
+                <i class="material-icons amber-text">local_gas_station</i>
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   `
 })
