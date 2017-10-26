@@ -23,10 +23,8 @@ import { Keg } from './keg.model';
           <strong>Pints Remaining:</strong>
           {{focusKeg.volume}}
         </p>
-
       </div>
     </div>
-
   `
 })
 
