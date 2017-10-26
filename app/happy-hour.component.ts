@@ -11,7 +11,7 @@ import { Keg } from './keg.model';
       </div>
       <div class="card-content">
         <p *ngIf="active" [id]="isActive()">Happening Now!</p>
-        <p><strong>4 to 6pm, Every Day</strong></p>
+        <p><strong>4 to 6pm Daily</strong></p>
         <p>All Pints $1 Off<p>
       </div>
     </div>

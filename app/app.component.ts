@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Keg } from './keg.model';
 
 @Component({
@@ -11,16 +11,16 @@ import { Keg } from './keg.model';
       <div class="col m12 l5 push-l7">
         <keg-details
           [focusKeg]="masterFocus"
-          [happyHour]="happyHour"
+          [happyHour]="isHappyHour()"
           (editClick)="editKeg($event)">
         </keg-details>
         <edit-keg [selectedKeg]="masterEdit" (doneClick)="editDone()"></edit-keg>
-        <happy-hour [active]="happyHour"></happy-hour>
+        <happy-hour [active]="isHappyHour()"></happy-hour>
       </div>
       <div class="col m12 l7 pull-l5">
         <keg-list
           [kegs]="kegsMaster"
-          [happyHour]="happyHour"
+          [happyHour]="isHappyHour()"
           (kegClick)="kegClick($event)">
         </keg-list>
         <new-keg (kegCreator)="addKeg($event)"></new-keg>
@@ -30,7 +30,7 @@ import { Keg } from './keg.model';
   `
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit{
   kegsMaster: Keg[] = [
     new Keg('Hop Czar', 'Bridgeport', 6, 7),
     new Keg('Dark Marc', 'M.T. Head', 5, 8),
@@ -40,7 +40,13 @@ export class AppComponent {
   ]
   masterEdit: Keg;
   masterFocus: Keg;
-  happyHour: boolean = true;
+  now: Date = new Date(Date.now());
+
+  ngOnInit() {
+    setInterval(() => {
+      this.now = new Date(Date.now());
+    }, 1000);
+  }
 
   addKeg(newKeg: Keg) {
     this.kegsMaster.push(newKeg);
@@ -81,5 +87,9 @@ export class AppComponent {
 
   sellGrowler(keg: Keg) {
     keg.sell(4);
+  }
+
+  isHappyHour() {
+    return (this.now.getHours() >= 16 && this.now.getHours() < 18);
   }
 }
