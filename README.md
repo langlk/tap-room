@@ -33,6 +33,7 @@ _A site for managing a tap room's inventory of kegs. Allows employees to add, vi
   * Current Volume Remaining (in Pints)
 * Allows user to create, view, and update a keg's information.
 * Selling a pint lowers a keg's volume by 1.
+* Selling a growler lowers a keg's volume by 4.
 
 ## Support and contact details
 
