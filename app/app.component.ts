@@ -41,6 +41,8 @@ export class AppComponent {
       this.focusKeg(clickInfo["keg"]);
     } else if (clickInfo["event"] === "sellPint") {
       this.sellPint(clickInfo["keg"]);
+    } else if (clickInfo["event"] === "sellGrowler") {
+      this.sellGrowler(clickInfo["keg"]);
     }
   }
 
@@ -64,5 +66,9 @@ export class AppComponent {
 
   sellPint(keg: Keg) {
     keg.sell(1);
+  }
+
+  sellGrowler(keg: Keg) {
+    keg.sell(4);
   }
 }

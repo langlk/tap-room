@@ -25,7 +25,14 @@ import { Keg } from './keg.model';
             -
             <span [class]="priceColor(keg)">{{"$" + keg.price}}</span>
           </span>
-          <a href="#" (click)="sellPint(keg)" class="secondary-content waves-effect waves-orange"><i class="material-icons amber-text">local_drink</i></a>
+          <span class="secondary-content">
+            <a href="#" (click)="sellPint(keg)" class="waves-effect waves-orange">
+              <i class="material-icons amber-text">local_drink</i>
+            </a>
+            <a href="#" (click)="sellGrowler(keg)" class="waves-effect waves-orange">
+              <i class="material-icons amber-text">local_gas_station</i>
+            </a>
+          </span>
         </li>
       </ul>
     </div>
@@ -43,6 +50,10 @@ export class KegListComponent {
 
   sellPint(keg: Keg) {
     this.kegClick.emit({"event": "sellPint", "keg": keg});
+  }
+
+  sellGrowler(keg: Keg) {
+    this.kegClick.emit({"event": "sellGrowler", "keg": keg})
   }
 
   toggleList() {
