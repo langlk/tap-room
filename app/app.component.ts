@@ -13,7 +13,8 @@ import { HappyHour } from './happy-hour.model';
       <div class="col m12 l5 push-l7">
         <keg-details
           [focusKeg]="masterFocus"
-          [happyHour]="isHappyHour()"
+          [happyHourActive]="isHappyHour()"
+          [discount]="happyHour.discount"
           (editClick)="editKeg($event)">
         </keg-details>
         <edit-keg [selectedKeg]="masterEdit" (doneClick)="editKegDone()"></edit-keg>
@@ -32,7 +33,8 @@ import { HappyHour } from './happy-hour.model';
       <div class="col m12 l7 pull-l5">
         <keg-list
           [kegs]="kegsMaster"
-          [happyHour]="isHappyHour()"
+          [happyHourActive]="isHappyHour()"
+          [discount]="happyHour.discount"
           (kegClick)="kegClick($event)">
         </keg-list>
         <new-keg (kegCreator)="addKeg($event)"></new-keg>

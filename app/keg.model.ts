@@ -7,9 +7,9 @@ export class Keg {
     this.volume -= size;
   }
 
-  getPrice(happyHour: boolean) {
+  getPrice(happyHour: boolean, discount: number) {
     if (happyHour) {
-      return this.price - 1;
+      return this.price - discount;
     } else {
       return this.price;
     }

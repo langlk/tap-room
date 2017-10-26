@@ -17,8 +17,8 @@ import { Keg } from './keg.model';
         <p>
         <p>
           <strong>Current Price:</strong>
-          {{"$" + focusKeg.getPrice(happyHour)}}
-          <span *ngIf="happyHour" id="happy-hour-pricing">Happy Hour Pricing</span>
+          {{"$" + focusKeg.getPrice(happyHourActive, discount)}}
+          <span *ngIf="happyHourActive" id="happy-hour-pricing">Happy Hour Pricing</span>
         <p>
         <p>
           <strong>ABV:</strong>
@@ -35,7 +35,8 @@ import { Keg } from './keg.model';
 
 export class KegDetailsComponent {
   @Input() focusKeg: Keg;
-  @Input() happyHour: boolean;
+  @Input() happyHourActive: boolean;
+  @Input() discount: number;
   @Output() editClick = new EventEmitter();
 
   edit() {
