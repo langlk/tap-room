@@ -75,13 +75,13 @@ h2 {
 }
 
 #edit-keg input:focus, #new-keg input:focus {
-  border-bottom: 1px solid #ffb502;
-  -webkit-box-shadow: 0 1px 0 0 #ffb502;
-  -moz-box-shadow: 0 1px 0 0 #ffb502;
-  box-shadow: 0 1px 0 0 #ffb502;
+  border-bottom: 1px solid #dd7b20;
+  -webkit-box-shadow: 0 1px 0 0 #dd7b20;
+  -moz-box-shadow: 0 1px 0 0 #dd7b20;
+  box-shadow: 0 1px 0 0 #dd7b20;
 }
 
-#keg-details, .edit-keg {
+#keg-details, .edit-keg, #happy-hour {
   margin-top: 0px;
 }
 
@@ -91,4 +91,9 @@ h2 {
 
 .new-keg {
   padding: 1em;
+}
+
+#happy-hour-active {
+  font-size: 18px;
+  color: #dd7b20;
 }

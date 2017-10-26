@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Keg } from './keg.model';
 
 @Component({
@@ -10,7 +10,8 @@ import { Keg } from './keg.model';
         <span class="card-title">Happy Hour</span>
       </div>
       <div class="card-content">
-        <p><strong>4-6pm, Every Day</strong></p>
+        <p [id]="isActive()">{{active ? "Happening Now!" : null}}</p>
+        <p><strong>4 to 6pm, Every Day</strong></p>
         <p>All Pints $1 Off<p>
       </div>
     </div>
@@ -18,5 +19,13 @@ import { Keg } from './keg.model';
 })
 
 export class HappyHourComponent {
+  @Input() active: boolean;
 
+  isActive() {
+    if (this.active) {
+      return "happy-hour-active";
+    } else {
+      return null;
+    }
+  }
 }

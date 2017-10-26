@@ -29,7 +29,7 @@ import { Keg } from './keg.model';
               <input [(ngModel)]="selectedKeg.abv" name="keg-abv">
             </div>
           </div>
-          <button type="button" (click)="editDone()" class="btn amber darken-3  waves-effect waves-light">Done Editing</button>
+          <button type="button" (click)="editDone()" class="btn amber darken-3 waves-effect waves-light">Done Editing</button>
         </form>
       </div>
     </div>

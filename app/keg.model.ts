@@ -6,4 +6,12 @@ export class Keg {
   sell(size: number) {
     this.volume -= size;
   }
+
+  getPrice(happyHour: boolean) {
+    if (happyHour) {
+      return this.price - 1;
+    } else {
+      return this.price;
+    }
+  }
 }

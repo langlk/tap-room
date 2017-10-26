@@ -35,16 +35,16 @@ import { Keg } from './keg.model';
               <span [class]="alcoholContent(keg)">{{keg.abv}}%</span>
             </td>
             <td class="clickable"(click)="focus(keg)">
-              <span [class]="priceColor(keg)">{{"$" + keg.price}}</span>
+              <span [class]="priceColor(keg)">{{"$" + keg.getPrice(happyHour)}}</span>
             </td>
             <td class="icon-col">
               <a href="#" (click)="sellPint(keg)" class="waves-effect waves-orange">
-                <i class="material-icons amber-text">local_drink</i>
+                <i class="material-icons amber-text text-darken-1">local_drink</i>
               </a>
             </td>
             <td class="icon-col">
               <a href="#" (click)="sellGrowler(keg)" class="waves-effect waves-orange">
-                <i class="material-icons amber-text">local_gas_station</i>
+                <i class="material-icons amber-text text-darken-1">local_gas_station</i>
               </a>
             </td>
           </tr>
@@ -56,6 +56,7 @@ import { Keg } from './keg.model';
 
 export class KegListComponent {
   @Input() kegs: Keg[];
+  @Input() happyHour: boolean;
   @Output() kegClick = new EventEmitter();
   volumeFilter: string = "allKegs";
 
