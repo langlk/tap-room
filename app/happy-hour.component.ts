@@ -13,7 +13,7 @@ import { HappyHour } from './happy-hour.model';
       <div class="card-content">
         <p *ngIf="active" [id]="isActive()">Happening Now!</p>
         <p>
-          <strong>{{happyHour.startTime}} to {{happyHour.endTime}} Daily</strong>
+          <strong>{{happyHour.startFormatted()}} to {{happyHour.endFormatted()}} Daily</strong>
         </p>
         <p>All Pints $1 Off<p>
       </div>
