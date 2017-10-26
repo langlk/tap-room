@@ -34,6 +34,8 @@ _A site for managing a tap room's inventory of kegs. Allows employees to add, vi
 * Allows user to create, view, and update a keg's information.
 * Selling a pint lowers a keg's volume by 1.
 * Selling a growler lowers a keg's volume by 4.
+* Happy Hour lowers all beer's price per pint by $1.
+* Happy Hour activates from 4-6pm.
 
 ## Support and contact details
 
