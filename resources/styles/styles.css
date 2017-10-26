@@ -89,6 +89,12 @@ h2 {
   font-weight: bold;
 }
 
+#happy-hour-pricing {
+  padding-left: .4rem;
+  font-size: 12px;
+  color: #dd7b20;
+}
+
 .new-keg {
   padding: 1em;
 }

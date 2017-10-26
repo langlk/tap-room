@@ -9,12 +9,20 @@ import { Keg } from './keg.model';
     <div class="divider"></div>
     <div class="row">
       <div class="col m12 l5 push-l7">
-        <keg-details [focusKeg]="masterFocus" (editClick)="editKeg($event)"></keg-details>
+        <keg-details
+          [focusKeg]="masterFocus"
+          [happyHour]="happyHour"
+          (editClick)="editKeg($event)">
+        </keg-details>
         <edit-keg [selectedKeg]="masterEdit" (doneClick)="editDone()"></edit-keg>
         <happy-hour [active]="happyHour"></happy-hour>
       </div>
       <div class="col m12 l7 pull-l5">
-        <keg-list [kegs]="kegsMaster" [happyHour]="happyHour" (kegClick)="kegClick($event)"></keg-list>
+        <keg-list
+          [kegs]="kegsMaster"
+          [happyHour]="happyHour"
+          (kegClick)="kegClick($event)">
+        </keg-list>
         <new-keg (kegCreator)="addKeg($event)"></new-keg>
       </div>
     </div>
