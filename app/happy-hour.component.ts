@@ -15,7 +15,7 @@ import { HappyHour } from './happy-hour.model';
         <p>
           <strong>{{happyHour.startFormatted()}} to {{happyHour.endFormatted()}} Daily</strong>
         </p>
-        <p>All Pints $1 Off<p>
+        <p>All Pints {{"$" + happyHour.discount}} Off<p>
       </div>
     </div>
   `
