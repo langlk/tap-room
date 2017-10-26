@@ -6,7 +6,7 @@ import { Keg } from './keg.model';
   template: `
     <div *ngIf="selectedKeg" class="card edit-keg">
       <div class="card-image">
-        <img src="resources/images/beer.jpg" alt="Close-up of beer">
+        <img src="resources/images/beer-foam.jpg" alt="Close-up of beer">
         <span class="card-title">Edit: {{selectedKeg.name}}</span>
       </div>
       <div class="card-content">

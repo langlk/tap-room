@@ -85,7 +85,7 @@ h2 {
   margin-top: 0px;
 }
 
-#keg-details strong {
+#keg-details strong, #happy-hour strong {
   font-weight: bold;
 }
 
