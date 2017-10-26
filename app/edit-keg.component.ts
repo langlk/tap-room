@@ -16,8 +16,8 @@ import { Keg } from './keg.model';
             <input id="input1" [(ngModel)]="selectedKeg.name" name="keg-name">
           </div>
           <div>
-            <label>Brand:</label>
-            <input [(ngModel)]="selectedKeg.brand" name="keg-brand">
+            <label>Brewery:</label>
+            <input [(ngModel)]="selectedKeg.brewery" name="keg-brand">
           </div>
           <div class="row">
             <div class="col s6">

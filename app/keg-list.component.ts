@@ -29,7 +29,7 @@ import { Keg } from './keg.model';
         </thead>
         <tbody>
           <tr *ngFor="let keg of kegs | volume:volumeFilter">
-            <td (click)="focus(keg)" class="clickable first-col">{{keg.brand}}</td>
+            <td (click)="focus(keg)" class="clickable first-col">{{keg.brewery}}</td>
             <td (click)="focus(keg)" class="clickable">{{keg.name}}</td>
             <td class="clickable" (click)="focus(keg)">
               <span [class]="alcoholContent(keg)">{{keg.abv}}%</span>
