@@ -8,7 +8,7 @@ import { Keg } from './keg.model';
       <div class="card-image">
         <img src="resources/images/beer-foam.jpg" alt="Close-up of beer">
         <span class="card-title">{{focusKeg.brewery}} - {{focusKeg.name}}</span>
-        <a (click)="edit()" class="btn-floating waves-effect halfway-fab waves-light orange darken-4 right"><i class="material-icons">mode_edit</i></a>
+        <a (click)="edit()" class="btn-floating waves-effect halfway-fab waves-light amber darken-4 right"><i class="material-icons">mode_edit</i></a>
       </div>
       <div class="card-content">
         <p>
