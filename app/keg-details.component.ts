@@ -12,7 +12,11 @@ import { Keg } from './keg.model';
       </div>
       <div class="card-content">
         <p>
-          <strong>Price/Pint:</strong>
+          <strong>Regular Price/Pint:</strong>
+          {{"$" + focusKeg.price}}
+        <p>
+        <p>
+          <strong>Current Price:</strong>
           {{"$" + focusKeg.getPrice(happyHour)}}
           <span *ngIf="happyHour" id="happy-hour-pricing">Happy Hour Pricing</span>
         <p>
