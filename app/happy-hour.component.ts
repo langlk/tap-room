@@ -10,7 +10,7 @@ import { Keg } from './keg.model';
         <span class="card-title">Happy Hour</span>
       </div>
       <div class="card-content">
-        <p [id]="isActive()">{{active ? "Happening Now!" : null}}</p>
+        <p *ngIf="active" [id]="isActive()">Happening Now!</p>
         <p><strong>4 to 6pm, Every Day</strong></p>
         <p>All Pints $1 Off<p>
       </div>
