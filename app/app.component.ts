@@ -8,11 +8,11 @@ import { Keg } from './keg.model';
     <h1>Tap Room</h1>
     <div class="divider"></div>
     <div class="row">
-      <div class="col m12 l6 push-l6">
+      <div class="col m12 l5 push-l7">
         <keg-details [focusKeg]="masterFocus" (editClick)="editKeg($event)"></keg-details>
         <edit-keg [selectedKeg]="masterEdit" (doneClick)="editDone()"></edit-keg>
       </div>
-      <div class="col m12 l6 pull-l6">
+      <div class="col m12 l7 pull-l5">
         <keg-list [kegs]="kegsMaster" (kegClick)="kegClick($event)"></keg-list>
         <new-keg (kegCreator)="addKeg($event)"></new-keg>
       </div>
@@ -47,6 +47,7 @@ export class AppComponent {
   }
 
   focusKeg(clickedKeg: Keg) {
+    this.masterEdit = null;
     if (this.masterFocus === clickedKeg) {
       this.masterFocus = null;
     } else {
