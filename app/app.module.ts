@@ -8,6 +8,7 @@ import { NewKegComponent } from './new-keg.component';
 import { EditKegComponent } from './edit-keg.component';
 import { KegDetailsComponent } from './keg-details.component';
 import { HappyHourComponent } from './happy-hour.component';
+import { EditHHComponent } from './edit-HH.component';
 
 import { VolumePipe } from './volume.pipe';
 
@@ -23,6 +24,7 @@ import { VolumePipe } from './volume.pipe';
     EditKegComponent,
     KegDetailsComponent,
     HappyHourComponent,
+    EditHHComponent,
     VolumePipe
   ],
   bootstrap: [ AppComponent ]
